@@ -41,7 +41,10 @@ public class Practice08ObjectAnimatorLayout extends RelativeLayout {
                 // 1. 用 ObjectAnimator 创建 Animator 对象
                 // 2. 用 start() 执行动画
                 // *. 记得在 Practice08ObjectAnimatorView 中为 progress 添加 setter/ getter 方法！
-                ObjectAnimator animator =ObjectAnimator.ofFloat(view,"progress",0,65); // 从0变到65
+
+                // 从0变到65  根据"progress"这个字符串 构造出 setProgress() ,再去调用这个方法，可以发现这个方法在 Practice08ObjectAnimatorView中
+                // 如果此时使用"mprogress"字符串，则setter和gettter方法要写成setMprogress()和  getMprogress()
+                ObjectAnimator animator =ObjectAnimator.ofFloat(view,"progress",0,65);
                 animator.setDuration(1000);
                 animator.setInterpolator(new FastOutSlowInInterpolator());
                 animator.start();
